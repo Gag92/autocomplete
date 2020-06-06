@@ -1,12 +1,21 @@
 .dropdown-item {
+  height: 35px;
   width: 100%;
-  line-height: 30px;
+  line-height: 35px;
   padding: 0 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  border-bottom: 1px solid #d2d2d2;
+  cursor: pointer;
   &.active {
     background-color: rgba(0,0,0,.1);
+  }
+  &.disable {
+    background-color: rgba(0,0,0,.03);
+    color: rgba(0,0,0,.7);
+    font-style: italic;
+    cursor: default;
   }
   &:hover {
     background-color: rgba(0,0,0,.1);

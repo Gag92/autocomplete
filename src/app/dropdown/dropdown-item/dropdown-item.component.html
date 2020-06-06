@@ -1,7 +1,4 @@
 <div
-  class="dropdown-item {{isActive ? 'active' : ''}} "
-  (click)="selectItem()"
->
-  {{option}}
+  class="dropdown-item {{isActive ? 'active' : ''}} {{option.disabled ? 'disable' : ''}}"
+  (click)="!option.disabled && selectItem()">{{option.label}}
 </div>
-
