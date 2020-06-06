@@ -1,0 +1,21 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+input {
+  width: 200px;
+  height: 20px;
+}
+
+.input-overlay {
+  position: relative;
+  z-index: 1001;
+}
+
+.overlay-Wrapper {
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 200px;
+  padding: 5px 0;
+  border: 1px solid #d2d2d2;
+}
+

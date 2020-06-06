@@ -1,0 +1,32 @@
+<input
+  cdk-overlay-origin
+  #trigger="cdkOverlayOrigin"
+  [(ngModel)]="state"
+  class="{{isOpen ? 'input-overlay' : ''}}"
+  (keyup)="onKeyUp($event)"
+  (keydown)="onKeyDown($event)"
+  (focus)="openHandler()"
+  [placeholder]="placeholder"
+  [disabled]="disabled"
+/>
+
+<ng-template
+  cdk-connected-overlay
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayOrigin]="trigger"
+  (backdropClick)="backdropHandler()"
+>
+  <div id="wrapper" class="overlay-Wrapper">
+    <div *ngIf="options.length">
+      <app-dropdown-item
+        *ngFor="let option of options"
+        [option]="option"
+        (select)="selectHandler($event)"
+      >
+      </app-dropdown-item>
+    </div>
+    <div *ngIf="!options.length">No data found</div>
+  </div>
+</ng-template>
